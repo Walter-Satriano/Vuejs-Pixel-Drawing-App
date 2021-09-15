@@ -1,5 +1,5 @@
 <template>
-  <div :class="['pixel', color, current ? 'current' : '']"></div>
+  <div @click="changeColor(color)" :class="['pixel', color, current ? 'current' : '']"></div>
 </template>
 
 <script>
@@ -8,6 +8,11 @@ export default {
   props: {
     color: String,
     current: Boolean
+  },
+  methods: {
+    changeColor: function(color) {
+      this.$root.$emit('updatecolor', color)
+    }
   }
 }
 </script>
