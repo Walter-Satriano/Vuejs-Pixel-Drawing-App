@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import Pixel from "./Pixel";
+import Pixel from './Pixel';
 
 export default {
-  name: "Canvas",
+  name: 'Canvas',
   components: {
     Pixel
   }
