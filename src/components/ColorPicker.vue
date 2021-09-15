@@ -12,6 +12,9 @@ import Pixel from './Pixel'
 
 export default {
   name: 'ColorPicker',
+  props: {
+    color: String
+  },
   components: {
     Pixel
   }
