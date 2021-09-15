@@ -1,12 +1,13 @@
 <template>
-  <div :class="['pixel', color]"></div>
+  <div :class="['pixel', color, current ? 'current' : '']"></div>
 </template>
 
 <script>
 export default {
   name: 'Pixel',
   props: {
-    color: String
+    color: String,
+    current: Boolean
   }
 }
 </script>
@@ -17,6 +18,10 @@ export default {
   width: 30px;
   height: 30px;
   box-sizing: border-box;
+}
+
+.pixel.current {
+  border: 4px solid yellow;
 }
 
 .white {
