@@ -19,7 +19,7 @@ export default {
 .canvas {
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
+  margin-left: 50px;
   max-width: 900px;
 }
 </style>
