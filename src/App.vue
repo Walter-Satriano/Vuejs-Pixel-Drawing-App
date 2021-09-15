@@ -16,6 +16,11 @@ export default {
       color: 'white'
     }
   },
+  mounted() {
+    this.$root.$on('updatecolor', color => {
+      this.color = color
+    })
+  },
   components: {
     Canvas,
     ColorPicker
@@ -26,11 +31,15 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
 }
 </style>
