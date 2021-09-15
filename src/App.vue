@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ColorPicker />
+    <ColorPicker :color=color />
     <Canvas />
   </div>
 </template>
