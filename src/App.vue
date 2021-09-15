@@ -11,6 +11,11 @@ import ColorPicker from './components/ColorPicker'
 
 export default {
   name: 'App',
+  data: function() {
+    return {
+      color: 'white'
+    }
+  },
   components: {
     Canvas,
     ColorPicker
