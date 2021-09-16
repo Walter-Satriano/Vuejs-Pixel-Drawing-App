@@ -1,5 +1,5 @@
 <template>
-  <div @click="isInColorPicker && changeColor(color)" :class="['pixel', color, current ? 'current' : '']"></div>
+  <div @click="handleClick" :class="['pixel', color, current ? 'current' : '']"></div>
 </template>
 
 <script>
@@ -8,11 +8,17 @@ export default {
   props: {
     color: String,
     current: Boolean,
-    isInColorPicker: Boolean
+    isInColorPicker: Boolean,
+    isInCanvas: Boolean
   },
   methods: {
-    changeColor: function(color) {
-      this.$root.$emit('updatecolor', color)
+    handleClick: function() {
+      if (this.isInColorPicker) {
+        this.$root.$emit('updatecolor', color)
+      }
+      if (this.isInCanvas) {
+        //todo
+      }
     }
   }
 }
