@@ -21,19 +21,19 @@ export default {
         .map( () => defaultColor)
     }
   },
+  components: {
+    Canvas,
+    ColorPicker
+  },
   mounted() {
     this.$root.$on('updatecolor', color => {
       this.color = color
     }),
 
-    this.$root.$on ('clickedpixel', index => {
+    this.$root.$on('clickedpixel', index => {
       this.pixels.splice(index, 1, this.color)
     })
 
-  },
-  components: {
-    Canvas,
-    ColorPicker
   }
 }
 </script>
