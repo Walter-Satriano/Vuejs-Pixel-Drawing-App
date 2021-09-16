@@ -1,5 +1,5 @@
 <template>
-  <div @click="interactive && changeColor(color)" :class="['pixel', color, current ? 'current' : '']"></div>
+  <div @click="isInColorPicker && changeColor(color)" :class="['pixel', color, current ? 'current' : '']"></div>
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
   props: {
     color: String,
     current: Boolean,
-    interactive: Boolean
+    isInColorPicker: Boolean
   },
   methods: {
     changeColor: function(color) {
