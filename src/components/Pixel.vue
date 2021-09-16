@@ -9,15 +9,16 @@ export default {
     color: String,
     current: Boolean,
     isInColorPicker: Boolean,
-    isInCanvas: Boolean
+    isInCanvas: Boolean,
+    index: Number
   },
   methods: {
     handleClick: function() {
       if (this.isInColorPicker) {
-        this.$root.$emit('updatecolor', color)
+        this.$root.$emit('updatecolor', this.color)
       }
       if (this.isInCanvas) {
-        //todo
+        this.$root.$emit('clickedpixel', this.index)
       }
     }
   }
