@@ -11,6 +11,9 @@ export default {
   name: 'Canvas',
   components: {
     Pixel
+  },
+  props: {
+    pixels: Array
   }
 }
 </script>
