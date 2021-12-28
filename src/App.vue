@@ -25,14 +25,23 @@ export default {
     Canvas,
     ColorPicker
   },
+  watch: {
+    pixels() {
+      localStorage.setItem("pixels", JSON.stringify(this.pixels))
+    }
+  },
   mounted() {
     this.$root.$on('updatecolor', color => {
       this.color = color
-    }),
+    })
 
     this.$root.$on('clickedpixel', index => {
       this.pixels.splice(index, 1, this.color)
     })
+
+    if(localStorage.getItem("pixels")) {
+      this.pixels = JSON.parse(localStorage.getItem("pixels"))
+    }
 
   }
 }
